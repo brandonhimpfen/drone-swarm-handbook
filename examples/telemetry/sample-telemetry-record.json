@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-01-01T12:00:00Z",
+  "missionId": "mission-demo-001",
+  "agentId": "agent-001",
+  "position": {
+    "x": 0.5,
+    "y": 0.2,
+    "z": 3.0
+  },
+  "velocity": {
+    "vx": 0.1,
+    "vy": 0.0,
+    "vz": 0.0
+  },
+  "batteryPercent": 94,
+  "status": "nominal",
+  "currentTask": "task-formation-hold",
+  "safetyFlags": []
+}

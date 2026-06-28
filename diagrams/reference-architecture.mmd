@@ -1,0 +1,12 @@
+flowchart TD
+    A[Mission Intent] --> B[Mission Planner]
+    B --> C[Swarm Coordinator]
+    C --> D[Agent Controller 1]
+    C --> E[Agent Controller 2]
+    C --> F[Agent Controller 3]
+    D --> G[Simulation Interface]
+    E --> G
+    F --> G
+    G --> H[Telemetry and Logs]
+    H --> I[Safety Review]
+    I --> B

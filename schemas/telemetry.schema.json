@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/telemetry.schema.json",
+  "title": "Drone Swarm Telemetry Record",
+  "type": "object",
+  "required": ["timestamp", "missionId", "agentId", "position", "status"],
+  "properties": {
+    "timestamp": { "type": "string", "format": "date-time" },
+    "missionId": { "type": "string" },
+    "agentId": { "type": "string" },
+    "position": {
+      "type": "object",
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "z": { "type": "number" }
+      }
+    },
+    "velocity": {
+      "type": "object",
+      "properties": {
+        "vx": { "type": "number" },
+        "vy": { "type": "number" },
+        "vz": { "type": "number" }
+      }
+    },
+    "batteryPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+    "status": { "type": "string", "enum": ["nominal", "degraded", "unavailable", "review-required"] },
+    "currentTask": { "type": "string" },
+    "safetyFlags": { "type": "array", "items": { "type": "string" } }
+  }
+}

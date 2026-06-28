@@ -1,0 +1,20 @@
+{
+  "scenarioId": "scenario-grid-001",
+  "name": "Basic Synthetic Grid Scenario",
+  "agentCount": 3,
+  "durationSeconds": 120,
+  "environment": {
+    "type": "synthetic-grid",
+    "description": "A simple bounded grid used for documentation and beginner simulation."
+  },
+  "metrics": [
+    "formation_error",
+    "minimum_separation",
+    "task_completion",
+    "safety_event_count"
+  ],
+  "failureInjections": [
+    "delayed_message",
+    "agent_unavailable"
+  ]
+}

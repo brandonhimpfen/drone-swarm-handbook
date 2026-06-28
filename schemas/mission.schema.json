@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/mission.schema.json",
+  "title": "Drone Swarm Mission Definition",
+  "type": "object",
+  "required": ["missionId", "name", "mode", "environment", "agents", "constraints", "tasks", "stopConditions"],
+  "properties": {
+    "missionId": { "type": "string" },
+    "name": { "type": "string" },
+    "mode": { "type": "string", "enum": ["simulation", "documentation", "review"] },
+    "environment": {
+      "type": "object",
+      "required": ["type", "description"],
+      "properties": {
+        "type": { "type": "string", "enum": ["synthetic", "simulated", "controlled-test-description"] },
+        "description": { "type": "string" }
+      }
+    },
+    "agents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["agentId", "role"],
+        "properties": {
+          "agentId": { "type": "string" },
+          "role": { "type": "string" },
+          "initialPosition": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "z": { "type": "number" }
+            },
+            "required": ["x", "y", "z"]
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "required": ["minimumSeparationMeters", "maxDurationSeconds", "humanReviewRequired"],
+      "properties": {
+        "minimumSeparationMeters": { "type": "number", "minimum": 0 },
+        "maxDurationSeconds": { "type": "number", "minimum": 1 },
+        "humanReviewRequired": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["taskId", "type", "assignedAgents"],
+        "properties": {
+          "taskId": { "type": "string" },
+          "type": { "type": "string" },
+          "assignedAgents": { "type": "array", "items": { "type": "string" } },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "stopConditions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

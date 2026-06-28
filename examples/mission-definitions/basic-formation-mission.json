@@ -1,0 +1,33 @@
+{
+  "missionId": "mission-demo-001",
+  "name": "Basic Formation Simulation",
+  "mode": "simulation",
+  "environment": {
+    "type": "simulated",
+    "description": "Synthetic grid used for education and documentation."
+  },
+  "agents": [
+    { "agentId": "agent-001", "role": "formation-member", "initialPosition": { "x": 0, "y": 0, "z": 3 } },
+    { "agentId": "agent-002", "role": "formation-member", "initialPosition": { "x": 3, "y": 0, "z": 3 } },
+    { "agentId": "agent-003", "role": "formation-member", "initialPosition": { "x": 0, "y": 3, "z": 3 } }
+  ],
+  "constraints": {
+    "minimumSeparationMeters": 2,
+    "maxDurationSeconds": 120,
+    "humanReviewRequired": true,
+    "notes": "Simulation-only example with synthetic coordinates."
+  },
+  "tasks": [
+    {
+      "taskId": "task-formation-hold",
+      "type": "hold-relative-formation",
+      "assignedAgents": ["agent-001", "agent-002", "agent-003"],
+      "description": "Maintain a simple triangular formation in simulation."
+    }
+  ],
+  "stopConditions": [
+    "minimum separation violated",
+    "duration exceeded",
+    "human review requested"
+  ]
+}

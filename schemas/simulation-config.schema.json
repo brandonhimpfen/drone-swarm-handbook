@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/simulation-config.schema.json",
+  "title": "Drone Swarm Simulation Configuration",
+  "type": "object",
+  "required": ["scenarioId", "name", "agentCount", "durationSeconds", "environment", "metrics"],
+  "properties": {
+    "scenarioId": { "type": "string" },
+    "name": { "type": "string" },
+    "agentCount": { "type": "integer", "minimum": 1 },
+    "durationSeconds": { "type": "integer", "minimum": 1 },
+    "environment": {
+      "type": "object",
+      "required": ["type", "description"],
+      "properties": {
+        "type": { "type": "string", "enum": ["synthetic-grid", "synthetic-indoor", "synthetic-outdoor"] },
+        "description": { "type": "string" }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "failureInjections": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

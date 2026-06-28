@@ -1,0 +1,24 @@
+{
+  "name": "drone-swarm-handbook",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A safety-conscious open handbook for drone swarm systems, covering concepts, architectures, coordination models, simulation, communication, governance, and developer workflows.",
+  "type": "module",
+  "scripts": {
+    "lint:schemas": "node scripts/validate-schemas.js",
+    "check": "npm run lint:schemas"
+  },
+  "keywords": [
+    "drone-swarms",
+    "uav",
+    "multi-agent-systems",
+    "robotics",
+    "simulation",
+    "autonomy",
+    "documentation"
+  ],
+  "license": "CC-BY-4.0",
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}
