@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/schemas/mission.schema.json",
+  "$id": "https://raw.githubusercontent.com/brandonhimpfen/drone-swarm-handbook/refs/heads/main/schemas/mission.schema.json",
   "title": "Drone Swarm Mission Definition",
   "type": "object",
   "required": ["missionId", "name", "mode", "environment", "agents", "constraints", "tasks", "stopConditions"],
