@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/schemas/simulation-config.schema.json",
+  "$id": "https://raw.githubusercontent.com/brandonhimpfen/drone-swarm-handbook/refs/heads/main/schemas/simulation-config.schema.json",
   "title": "Drone Swarm Simulation Configuration",
   "type": "object",
   "required": ["scenarioId", "name", "agentCount", "durationSeconds", "environment", "metrics"],
