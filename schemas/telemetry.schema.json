@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/schemas/telemetry.schema.json",
+  "$id": "https://raw.githubusercontent.com/brandonhimpfen/drone-swarm-handbook/refs/heads/main/schemas/telemetry.schema.json",
   "title": "Drone Swarm Telemetry Record",
   "type": "object",
   "required": ["timestamp", "missionId", "agentId", "position", "status"],
